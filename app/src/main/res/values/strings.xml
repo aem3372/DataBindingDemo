@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DataBindingDemo</string>
+    <string name="click_tip">onClick</string>
+    <string name="timer_finish_tip">timer finish</string>
+    <string name="timer_tick_tip">tick</string>
 </resources>

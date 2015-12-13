@@ -1,9 +1,12 @@
-package com.aemiot.demo.databinding;
+package com.aemiot.demo.databinding.activity;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.aemiot.demo.databinding.R;
 import com.aemiot.demo.databinding.databinding.ActivityMutilateTypeBinding;
 import com.aemiot.demo.databinding.model.CustomType;
 
@@ -33,5 +36,6 @@ public class MutilateTypeActivity extends AppCompatActivity {
         CustomType custom = new CustomType();
         custom.value = "custom";
         binding.setCustomValue(custom);
+        binding.setDrawable(new ColorDrawable(Color.BLUE));
     }
 }

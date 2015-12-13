@@ -1,9 +1,10 @@
-package com.aemiot.demo.databinding;
+package com.aemiot.demo.databinding.activity;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.aemiot.demo.databinding.R;
 import com.aemiot.demo.databinding.databinding.ActivitySimpleBinding;
 
 public class SimpleActivity extends AppCompatActivity {

@@ -3,24 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="java.util.Date" />
-        <import type="java.util.List" />
-        <import type="com.aemiot.demo.databinding.model.CustomType" />
+        <import type="java.util.Date"/>
+        <import type="java.util.List"/>
+        <import type="com.aemiot.demo.databinding.model.CustomType"/>
+        <import type="android.graphics.drawable.Drawable"/>
 
-        <variable name="intValue" type="int" />
-        <variable name="shortValue" type="short" />
-        <variable name="longValue" type="long" />
-        <variable name="floatValue" type="float" />
-        <variable name="doubleValue" type="double" />
-        <variable name="integerClassValue" type="Integer" />
-        <variable name="shortClassValue" type="Short" />
-        <variable name="longClassValue" type="Long" />
-        <variable name="floatClassValue" type="Float" />
-        <variable name="doubleClassValue" type="Double" />
-        <variable name="stringValue" type="String" />
-        <variable name="dateValue" type="Date" />
-        <variable name="listValue" type="List" />
-        <variable name="customValue" type="CustomType" />
+        <variable name="intValue" type="int"/>
+        <variable name="shortValue" type="short"/>
+        <variable name="longValue" type="long"/>
+        <variable name="floatValue" type="float"/>
+        <variable name="doubleValue" type="double"/>
+        <variable name="integerClassValue" type="Integer"/>
+        <variable name="shortClassValue" type="Short"/>
+        <variable name="longClassValue" type="Long"/>
+        <variable name="floatClassValue" type="Float"/>
+        <variable name="doubleClassValue" type="Double"/>
+        <variable name="stringValue" type="String"/>
+        <variable name="dateValue" type="Date"/>
+        <variable name="listValue" type="List"/>
+        <variable name="customValue" type="CustomType"/>
+        <variable name="drawable" type="Drawable"/>
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +36,7 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            tools:context="com.aemiot.demo.databinding.MutilateTypeActivity">
+            tools:context=".activity.MutilateTypeActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,6 +93,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{customValue.value}"/>
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@{drawable}" />
         </LinearLayout>
     </ScrollView>
 </layout>
