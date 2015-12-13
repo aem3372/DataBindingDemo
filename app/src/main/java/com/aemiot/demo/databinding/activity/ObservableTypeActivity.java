@@ -9,6 +9,7 @@ import android.databinding.ObservableInt;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.aemiot.demo.databinding.R;
 import com.aemiot.demo.databinding.databinding.ActivityObservableTypeBinding;
+import com.aemiot.demo.databinding.model.CustomObservableType;
 
 public class ObservableTypeActivity extends AppCompatActivity {
 
@@ -30,7 +32,10 @@ public class ObservableTypeActivity extends AppCompatActivity {
     private ObservableField<String> stringValue;
     private ObservableArrayList<String> listValue;
     private ObservableArrayMap<String, String> mapValue;
+    private CustomObservableType customValue;
     private ObservableField<Drawable> drawable;
+
+    private CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class ObservableTypeActivity extends AppCompatActivity {
         stringValue = new ObservableField<>("");
         listValue = new ObservableArrayList<>();
         mapValue = new ObservableArrayMap<>();
+        customValue = new CustomObservableType();
+        customValue.setValue("");
         drawable = new ObservableField<>(drawables[0]);
 
         binding.setObservableBooleanValue(booleanValue);
@@ -49,8 +56,9 @@ public class ObservableTypeActivity extends AppCompatActivity {
         binding.setObservableStringValue(stringValue);
         binding.setObservableListValue(listValue);
         binding.setObservableMapValue(mapValue);
+        binding.setObservableCustomValue(customValue);
         binding.setObservableDrawable(drawable);
-        CountDownTimer timer = new CountDownTimer(60*1000L, 1000L) {
+        timer = new CountDownTimer(60*1000L, 1000L) {
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -59,6 +67,7 @@ public class ObservableTypeActivity extends AppCompatActivity {
                 stringValue.set(stringValue.get() + "s");
                 listValue.add("l");
                 mapValue.put(String.valueOf(millisUntilFinished), "v");
+                customValue.setValue(customValue.getValue() + "c");
                 drawable.set(drawables[intValue.get() % drawables.length]);
             }
 
@@ -68,6 +77,11 @@ public class ObservableTypeActivity extends AppCompatActivity {
                         R.string.timer_finish_tip, Toast.LENGTH_SHORT).show();
             }
         };
-        timer.start();
+        new Handler(getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                timer.start();
+            }
+        });
     }
 }

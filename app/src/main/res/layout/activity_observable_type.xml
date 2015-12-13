@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.databinding.ObservableBoolean" />
-        <import type="android.databinding.ObservableInt" />
-        <import type="android.databinding.ObservableField" />
-        <import type="android.databinding.ObservableArrayList" />
-        <import type="android.databinding.ObservableArrayMap" />
+        <import type="android.databinding.ObservableBoolean"/>
+        <import type="android.databinding.ObservableInt"/>
+        <import type="android.databinding.ObservableField"/>
+        <import type="android.databinding.ObservableArrayList"/>
+        <import type="android.databinding.ObservableArrayMap"/>
+        <import type="com.aemiot.demo.databinding.model.CustomObservableType"/>
         <import type="android.graphics.drawable.Drawable"/>
         
-        <variable name="observableBooleanValue" type="ObservableBoolean" />
-        <variable name="observableIntValue" type="ObservableInt" />
-        <variable name="observableStringValue" type="ObservableField&lt;String>" />
-        <variable name="observableListValue" type="ObservableArrayList&lt;String>" />
-        <variable name="observableMapValue" type="ObservableArrayMap&lt;String,String>" />
+        <variable name="observableBooleanValue" type="ObservableBoolean"/>
+        <variable name="observableIntValue" type="ObservableInt"/>
+        <variable name="observableStringValue" type="ObservableField&lt;String>"/>
+        <variable name="observableListValue" type="ObservableArrayList&lt;String>"/>
+        <variable name="observableMapValue" type="ObservableArrayMap&lt;String,String>"/>
+        <variable name="observableCustomValue" type="CustomObservableType"/>
         <variable name="observableDrawable" type="ObservableField&lt;Drawable>"/>
     </data>
     <ScrollView
@@ -50,6 +52,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{observableMapValue.toString()}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{observableCustomValue.getValue()}"/>
             <View
                 android:layout_width="20dp"
                 android:layout_height="20dp" 
