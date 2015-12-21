@@ -16,10 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.IdsActivity"/>
         <activity android:name=".activity.MutilateTypeActivity" />
         <activity android:name=".activity.CustomBindingNameActivity" />
         <activity android:name=".activity.EventBindingActivity" />
         <activity android:name=".activity.ObservableTypeActivity" />
+        <activity android:name=".activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>
