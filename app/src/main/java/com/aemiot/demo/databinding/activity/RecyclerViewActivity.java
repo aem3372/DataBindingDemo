@@ -16,8 +16,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityRecyclerBinding binding =
                 DataBindingUtil.setContentView(this, R.layout.activity_recycler);
-        binding.recyclerView.setHasFixedSize(true);
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.recyclerView.setAdapter(new RecyclerAdapter());
+        binding.setLayoutManager(new LinearLayoutManager(this));
+        binding.setAdapter(new RecyclerAdapter());
     }
 }

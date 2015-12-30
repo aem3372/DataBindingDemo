@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable name="adapter" type="com.aemiot.demo.databinding.adapter.RecyclerAdapter" />
+        <variable name="layoutManager" type="android.support.v7.widget.RecyclerView.LayoutManager" />
+    </data>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -13,7 +17,10 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            hasFixedSize="true"
+            adapter="@{adapter}"
+            layoutManager="@{layoutManager}"/>
 
     </FrameLayout>
 </layout>

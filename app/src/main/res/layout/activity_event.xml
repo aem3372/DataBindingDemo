@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.aemiot.demo.databinding.event.ButtonHandler" />
+        <import type="com.aemiot.demo.databinding.event.ButtonHandler"/>
 
         <variable name="tip" type="String" />
         <variable name="handle" type="ButtonHandler" />
@@ -22,6 +22,7 @@
             android:text="@{tip}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{handle.tip}" />
+            android:onClick="@{handle.tip}"
+            android:onLongClick="@{handle.longTip}"/>
     </FrameLayout>
 </layout>

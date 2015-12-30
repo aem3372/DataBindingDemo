@@ -22,7 +22,8 @@
         <activity android:name=".activity.EventBindingActivity" />
         <activity android:name=".activity.ObservableTypeActivity" />
         <activity android:name=".activity.RecyclerViewActivity" />
-        <activity android:name=".activity.ExpressionActivity"></activity>
+        <activity android:name=".activity.ExpressionActivity" />
+        <activity android:name=".activity.AttributeSetterActivity"></activity>
     </application>
 
 </manifest>
